@@ -1,0 +1,31 @@
+package fresher.math.easy;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class RomanToInteger {
+
+    public int romanToInteger(String s) {
+        Map<Character, Integer> map = new HashMap<>();
+        map.put('I', 1);
+        map.put('V', 5);
+        map.put('X', 10);
+
+        if(s.length() == 1) return map.get(s.charAt(0));
+
+        int result = 0;
+        for(int i = 0 ; i < s.length() ; i++ ) {
+            if( i == s.length() - 1 || map.get(s.charAt(i)) >= map.get(s.charAt(i+1)) )
+                result += map.get(s.charAt(i));
+            else
+                result -= map.get(s.charAt(i));
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        RomanToInteger romanToInteger = new RomanToInteger();
+        int rs = romanToInteger.romanToInteger("IV");
+        System.out.println("Roman to integer: " + rs);
+    }
+}
