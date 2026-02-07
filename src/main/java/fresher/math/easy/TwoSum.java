@@ -36,6 +36,6 @@ public class TwoSum {
 
         TwoSum twoSum = new TwoSum();
         System.out.println("Two Sum brute force: " + Arrays.toString(twoSum.twoSum(arr, 5)));
-        System.out.println("Two Sum hash set: " + Arrays.toString(twoSum.twoSumHashSet(7, arr)));
+        System.out.println("Two Sum hash set: " + Arrays.toString(twoSum.twoSumHashMap(arr,7)));
     }
 }
